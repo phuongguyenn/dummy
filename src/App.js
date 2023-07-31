@@ -9,7 +9,7 @@ function Page1() {
   const fetchData = (skip, limit) => {
     axios
       .get("https://dummyjson.com/products", {
-        params: { skip, limit },
+        params: { skip: 0, limit: 10 },
       })
       .then((response) => {
         setData(response.data);
@@ -35,7 +35,7 @@ function Page1() {
       <div>
         <div>
           {Array.from({ length: data.total / 10 }, (_, i) => i).map((i) => (
-            <button onClick={fetchData}>{i + 1}</button>
+            <button onClick={() => fetchData((i - 1) * 20, 20)}>{i + 1}</button>
           ))}
         </div>
       </div>
