@@ -35,7 +35,7 @@ function Page1() {
       <div>
         <div>
           {Array.from({ length: data.total / 10 }, (_, i) => i).map((i) => (
-            <button onClick={() => fetchData((i - 1) * 20, 20)}>{i + 1}</button>
+            <button onClick={() => fetchData((i - 1) * 10, 10)}>{i + 1}</button>
           ))}
         </div>
       </div>
